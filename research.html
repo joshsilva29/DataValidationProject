@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="research.css">
+    </head>
+    <body>
+        <h1>Research Form</h1>
+        <form action="researchProcessing.php" method="get" onsubmit="return displayMessage()">
+            <fieldset id="gen-info">
+                <legend class="field">General Information</legend>
+                <div id="name" class="row">
+                    <div class="height">Firstname: </div>
+                    <input class="box" type="text" name="firstname" required>
+                    <div class="height">Lastname: </div>
+                    <input type="text" name="lastname" required>
+                </div>
+                <div id="general-rest" class="row">
+                    <div>Phone: </div>
+                    <input type="text" class="phone" id="phoneFirstPart" name="phoneFirstPart" required>
+                    <div>-</div>
+                    <input type="text" class="phone" id="phoneSecondPart" name="phoneSecondPart" required>
+                    <div>-</div>
+                    <input type="text" class="phone" id="phoneThirdPart" name="phoneThirdPart" required>
+                    <div class="height">Email: </div>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            </fieldset>
+            <fieldset id="research-study">
+                <legend class="field">Research Study Data</legend>
+                <fieldset class="row">
+                    <legend>Age/Height/Weight</legend>
+                    <div class="row">
+                        <strong class="height">Age: </strong>
+                        <input class="box" type="number" name="age" min="1" max="125" required>
+                    </div>
+                    <div class="row">
+                        <strong class="height">Height: </strong>
+                        <input class="height" type="number" name="heightFeet" min="2" max="7" required>
+                        <div class="height">Feet</div>
+                        <input class="height" type="number" name="heightInches" min="0" max="11" required>
+                        <div class="box">Inches</div>
+                    </div>
+                    <div class="row">
+                        <strong class="height">Weight: </strong>
+                        <input class="height" type="number" name="weight" min="1" max="600" required>
+                        <div>Pounds</div>
+                    </div>
+                </fieldset>
+                <fieldset id="conditions">
+                    <legend>Conditions</legend>
+                    <div>Which of the following conditions are present in your family? (Check all that apply)</div>
+                    <div class="row" id="boxes">
+                        <div class="row">
+                            <input class="checkbox" type="checkbox" id="highBloodPressure" name="highBloodPressure" value="High Blood Pressure">
+                            <div class="text-right">High Blood Pressure</div>
+                        </div>
+                        <div class="row">
+                            <input class="checkbox" type="checkbox" id="diabetes" name="diabetes" value="Diabetes">
+                            <div class="text-right">Diabetes</div>
+                        </div>
+                        <div class="row">
+                            <input class="checkbox" type="checkbox" id="glaucoma" name="glaucoma" value="Glaucoma">
+                            <div class="text-right">Glaucoma</div>
+                        </div>
+                        <div class="row">
+                            <input class="checkbox" type="checkbox" id="asthma" name="asthma" value="Asthma">
+                            <div class="text-right">Asthma</div>
+                        </div>
+                        <div class="row">
+                            <input type="checkbox" id="none-condition" name="none" value="None">
+                            <div>None</div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset id="time-period">
+                    <legend>Time Period</legend>
+                    <div>How long have you experienced any of the above conditions?</div>
+                    <div id="radio-buttons" class="row">
+                        <div class="row">
+                            <input class="checkbox" type="radio" name="period" value="Never">
+                            <div class="text-right">Never</div>
+                        </div>
+                        <div class="row">
+                            <input class="checkbox" type="radio" name="period" value="LessThanAYear">
+                            <div class="text-right">Less than a year</div>
+                        </div>
+                        <div class="row">
+                            <input class="checkbox" type="radio" name="period" value="OneToTwoYears">
+                            <div class="text-right">One to Two Years</div>
+                        </div>
+                        <div class="row">
+                            <input class="checkbox" type="radio" name="period" value="MoreThanTwoYears">
+                            <div class="text-right">More than two years</div>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset id="study-info">
+                    <legend>Study Information</legend>
+                    <div class="row">
+                        <div class="height">What study are you taking part of? </div>
+                        <select id="select-term" name="studyType">
+                            <option value="LongTerm">Long Term</option>
+                            <option value="ShortTerm">Short Term</option>
+                        </select>
+                        <div class="height">Assigned Study Id: </div>
+                        <input class="id" type="text" id="first-four" name="firstFourDigits" placeholder="A777" required>
+                        <div>-</div>
+                        <input class="id" type="text" id="second-four" name="secondFourDigits" placeholder="B888" required>
+                    </div>
+                </fieldset>
+                <fieldset id="add-info">
+                    <legend>Additional Information (Comments)</legend>
+                    <textarea name="comments" rows="4" cols="70"></textarea>
+                </fieldset>
+            </fieldset>
+            <fieldset class="bottom-boxes" id="buttons">
+                <input type="reset" value="Clear Form">
+                <input type="submit" value="Submit Information">
+            </fieldset>
+            <div class="bottom-boxes" id="copyright">
+                <div>CMSC Research Institute &reg</div>
+            </div>
+        </form>
+        <script src="code.js"></script>
+    </body>
+</html>
